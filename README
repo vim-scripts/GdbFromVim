@@ -2,24 +2,26 @@ This is a mirror of http://www.vim.org/scripts/script.php?script_id=4103
 
 Requirements
 
-    GdbFromVim requires Vim 7.3+ compiled with Python support.
-    Python 2.6+
-    Gdblib - https://github.com/skibyte/gdblib
+    GdbFromVim requires Vim 7.3+ compiled with Python support.
+    Python 2.6+
+    Gdblib - https://github.com/skibyte/gdblib
 
 You can obtain the latest GdbFromVim development version from : https://github.com/skibyte/gdb-from-vim
 
-Setting the application to debug:  let g:gdb_from_vim_app = 'application'
+Setting the application to debug:  let g:gdb_from_vim_app = 'application'
 Settings the arguments for the application: let g:gdb_from_vim_args = 'arguments'
 -------------------------------------------------------------------------------------------------------------
 Commands
 -------------------------------------------------------------------------------------------------------------
-GdbFromVimRun:  This command starts the execution of the program.
+GdbFromVimRun:  This command starts the execution of the program.
 
-GdbFromVimStep:  This commands steps into a function.
+GdbFromVimStep:  This commands steps into a function.
 
-GdbFromVimNext:   This commands pass over a function.
+GdbFromVimNext:   This commands pass over a function.
 
-GdbFromVimAddBreakpoint:  This command adds a breakpoint in the current line.
+GdbFromVimContinue: This command continues with the execution of the program
+
+GdbFromVimAddBreakpoint:  This command adds a breakpoint in the current line.
 
 GdbFromVimDeleteBreakpoint:This command deletes the breakpoint specified by its number.
 
@@ -30,3 +32,7 @@ GdbFromVimClear: This commands deletes the breakpoint in the current line.
 GdbFromVimPrint: This command prints the value of a variable, it requires an argument, For example: GdbFromVimPrint point->x
 
 GdbFromVimPrintBreakpoints:This command prints all the breakpoints set in the application, the values are printed in the quickfix list.
+
+GdbFromVimTty: This command is used to redirect the IO to the specified tty passed as argument.
+
+GdbFromVimClose: Closes the current gdb connection, this command might be used if you want to change the application to debug at runtime.
