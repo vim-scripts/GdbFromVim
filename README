@@ -4,12 +4,15 @@ Requirements
 
     GdbFromVim requires Vim 7.3+ compiled with Python support.
     Python 2.6+
-    Gdblib - https://github.com/skibyte/gdblib
+    Gdblib - https://github.com/skibyte/gdblib <-- MAKE SURE TO USE THE LAST gdblib VERSION!!!
 
 You can obtain the latest GdbFromVim development version from : https://github.com/skibyte/gdb-from-vim
 
 Setting the application to debug:  let g:gdb_from_vim_app = 'application'
 Settings the arguments for the application: let g:gdb_from_vim_args = 'arguments'
+Setting the gdb path let g:gdb_from_vim_path = '/usr/bin/gdb'
+
+
 -------------------------------------------------------------------------------------------------------------
 Commands
 -------------------------------------------------------------------------------------------------------------
@@ -19,7 +22,8 @@ GdbFromVimStep:  This commands steps into a function.
 
 GdbFromVimNext:   This commands pass over a function.
 
-GdbFromVimContinue: This command continues with the execution of the program
+GdbFromVimContinue: This command continues with the execution of the program, this command is also
+used to start remote debugging.
 
 GdbFromVimAddBreakpoint:  This command adds a breakpoint in the current line.
 
@@ -36,3 +40,11 @@ GdbFromVimPrintBreakpoints:This command prints all the breakpoints set in the ap
 GdbFromVimTty: This command is used to redirect the IO to the specified tty passed as argument.
 
 GdbFromVimClose: Closes the current gdb connection, this command might be used if you want to change the application to debug at runtime.
+
+GdbFromVimRemote : This command is used to perform remote debugging, it receives as argument the
+host and its port:
+
+    GdbFromVimRemote 127.0.0.1:1234
+
+GdbFromVimSymbolFile : Adds the symbol file passed as argument to gdb.
+
